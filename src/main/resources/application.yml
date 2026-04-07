@@ -3,16 +3,47 @@ server:
 
 spring:
   r2dbc:
-    url: r2dbc:postgresql://ep-lively-cloud-anky0g3q-pooler.c-6.us-east-1.aws.neon.tech/product?sslmode=require&channel_binding=require
+    url: r2dbc:postgresql://neondb_owner:npg_4ebgfRotc9WN@ep-lively-cloud-anky0g3q-pooler.c-6.us-east-1.aws.neon.tech/img_removal?sslmode=require
     username: neondb_owner
     password: npg_4ebgfRotc9WN
+    pool:
+      initial-size: 5
+      max-size: 20
+
   sql:
     init:
       mode: never
-  logging:
-    level:
-      org.springframework.r2dbc: DEBUG
 
+  # Configuración para subir archivos
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  # Aumentar límite de memoria para WebClient
+  codec:
+    max-in-memory-size: 10MB
+
+# Logging
+logging:
+  level:
+    org.springframework.r2dbc: DEBUG
+    org.springframework.web.reactive.function.client: DEBUG
+
+# RapidAPI Configuration (CORREGIDO)
+rapidapi:
+  key: 7eef42a686msh551ed82879c57b3p1cc63ajsn96c0db47d461
+  host: ai-background-removal.p.rapidapi.com
+  url: https://ai-background-removal.p.rapidapi.com/v1
+
+# Configuración para GEMINI (opcional, comentado correctamente)
+# rapidapi:
+#   key: TU_API_KEY
+#   host: gemini-pro-ai.p.rapidapi.com
+#   url: https://gemini-pro-ai.p.rapidapi.com/
+
+# SpringDoc OpenAPI
 springdoc:
   api-docs:
     enabled: true
