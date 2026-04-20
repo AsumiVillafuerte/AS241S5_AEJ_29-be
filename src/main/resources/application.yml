@@ -1,49 +1,34 @@
 server:
-  port: 8082
+  port: ${PORT:8085}
+  url: ${SERVER_URL:http://localhost:8085}
 
 spring:
+  application:
+    name: API-AI
   r2dbc:
-    url: r2dbc:postgresql://neondb_owner:npg_4ebgfRotc9WN@ep-lively-cloud-anky0g3q-pooler.c-6.us-east-1.aws.neon.tech/img_removal?sslmode=require
-    username: neondb_owner
-    password: npg_4ebgfRotc9WN
-    pool:
-      initial-size: 5
-      max-size: 20
-
+    url: ${DATABASE_URL:r2dbc:postgresql://neondb_owner:npg_6eXQW5PADZBH@ep-delicate-meadow-amgown0z-pooler.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require}
+    username: ${DATABASE_USERNAME:neondb_owner}
+    password: ${DATABASE_PASSWORD:npg_6eXQW5PADZBH}
   sql:
     init:
       mode: never
 
-  # Configuración para subir archivos
-  servlet:
-    multipart:
-      enabled: true
-      max-file-size: 10MB
-      max-request-size: 10MB
+rapidapi:
+  google-translate:
+    url: ${TRANSLATE_API_URL:https://google-translate113.p.rapidapi.com}
+    host: ${TRANSLATE_API_HOST:google-translate113.p.rapidapi.com}
+    apikey: ${TRANSLATE_API_KEY:7eef42a686msh551ed82879c57b3p1cc63ajsn96c0db47d461}
 
-  # Aumentar límite de memoria para WebClient
-  codec:
-    max-in-memory-size: 10MB
+  youtube-mp3:
+    url: ${YOUTUBE_API_URL:https://youtube-mp310.p.rapidapi.com}
+    host: ${YOUTUBE_API_HOST:youtube-mp310.p.rapidapi.com}
+    apikey: ${YOUTUBE_API_KEY:7eef42a686msh551ed82879c57b3p1cc63ajsn96c0db47d461}
 
-# Logging
 logging:
   level:
     org.springframework.r2dbc: DEBUG
     org.springframework.web.reactive.function.client: DEBUG
 
-# RapidAPI Configuration (CORREGIDO)
-rapidapi:
-  key: 7eef42a686msh551ed82879c57b3p1cc63ajsn96c0db47d461
-  host: ai-background-removal.p.rapidapi.com
-  url: https://ai-background-removal.p.rapidapi.com/v1
-
-# Configuración para GEMINI (opcional, comentado correctamente)
-# rapidapi:
-#   key: TU_API_KEY
-#   host: gemini-pro-ai.p.rapidapi.com
-#   url: https://gemini-pro-ai.p.rapidapi.com/
-
-# SpringDoc OpenAPI
 springdoc:
   api-docs:
     enabled: true
