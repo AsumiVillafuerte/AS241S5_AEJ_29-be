@@ -66,3 +66,11 @@
 # aplicar todos los manifiestos a la vez
   #kubectl apply -f asumi-villafuerte-29-namespace.yml -f asumi-villafuerte-29-secret.yml -f asumi-villafuerte-29-service.yml -f asumi-villafuerte-29-deployment.yml
 
+
+
+# PASO 1: minikube start
+# PASO 2: cd manifest
+# PASO 3: kubectl apply -f asumi-villafuerte-29-namespace.yml -f asumi-villafuerte-29-secret.yml -f asumi-villafuerte-29-service.yml -f asumi-villafuerte-29-deployment.yml
+# PASO 4: minikube service asumi-villafuerte-29-service -n asumi-villafuerte-29-namespace
+# PASO 5: kubectl get all -n asumi-villafuerte-29-namespace --> Opcional
+# PASO 6: kubectl port-forward service/asumi-villafuerte-29-service 8085:30001 -n asumi-villafuerte-29-namespace
