@@ -1,0 +1,25 @@
+# kubectl apply -f asumi-villafuerte-29-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: asumi-villafuerte-29-deployment
+  namespace: asumi-villafuerte-29-namespace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: asumi-villafuerte-29-deployment
+  template:
+    metadata:
+      labels:
+        app: asumi-villafuerte-29-deployment
+    spec:
+      containers:
+        - name: asumi-villafuerte-29-container
+          image: asumi27/api-rapi-29-be:v1   # Tu imagen Docker en Docker Hub
+          imagePullPolicy: IfNotPresent        # Evitar traer siempre la última versión si hay una actual
+          ports:
+            - containerPort: 8085
+          envFrom:
+            - secretRef:
+                name: asumi-villafuerte-29-secret  # Esto cargará todos los valores como variables de entorno

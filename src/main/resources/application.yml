@@ -1,28 +1,42 @@
 server:
   port: ${PORT:8085}
-  url: ${SERVER_URL:http://localhost:8085}
+  url: ${SERVER_URL:https://jubilant-waddle-7vr6vrwxrg9w3xv74-8085.app.github.dev/} #http://localhost:8085
 
 spring:
   application:
     name: API-AI
   r2dbc:
-    url: ${DATABASE_URL:r2dbc:postgresql://neondb_owner:npg_6eXQW5PADZBH@ep-delicate-meadow-amgown0z-pooler.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require}
-    username: ${DATABASE_USERNAME:neondb_owner}
-    password: ${DATABASE_PASSWORD:npg_6eXQW5PADZBH}
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+
+    #url: ${DATABASE_URL:r2dbc:postgresql://neondb_owner:npg_6eXQW5PADZBH@ep-delicate-meadow-amgown0z-pooler.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require}
+    #username: ${DATABASE_USERNAME:neondb_owner}
+    #password: ${DATABASE_PASSWORD:npg_6eXQW5PADZBH}
   sql:
     init:
       mode: never
 
 rapidapi:
   google-translate:
-    url: ${TRANSLATE_API_URL:https://google-translate113.p.rapidapi.com}
-    host: ${TRANSLATE_API_HOST:google-translate113.p.rapidapi.com}
-    apikey: ${TRANSLATE_API_KEY:7eef42a686msh551ed82879c57b3p1cc63ajsn96c0db47d461}
-
+    url: ${TRANSLATE_API_URL}
+    host: ${TRANSLATE_API_HOST}
+    apikey: ${TRANSLATE_API_KEY}
+  
   youtube-mp3:
-    url: ${YOUTUBE_API_URL:https://youtube-mp310.p.rapidapi.com}
-    host: ${YOUTUBE_API_HOST:youtube-mp310.p.rapidapi.com}
-    apikey: ${YOUTUBE_API_KEY:7eef42a686msh551ed82879c57b3p1cc63ajsn96c0db47d461}
+    url: ${YOUTUBE_API_URL}
+    host: ${YOUTUBE_API_HOST}
+    apikey: ${YOUTUBE_API_KEY}
+
+  #google-translate:
+    #url: ${TRANSLATE_API_URL:https://google-translate113.p.rapidapi.com}
+    #host: ${TRANSLATE_API_HOST:google-translate113.p.rapidapi.com}
+    #apikey: ${TRANSLATE_API_KEY:7eef42a686msh551ed82879c57b3p1cc63ajsn96c0db47d461}
+  
+  #youtube-mp3:
+    #url: ${YOUTUBE_API_URL:https://youtube-mp310.p.rapidapi.com}
+    #host: ${YOUTUBE_API_HOST:youtube-mp310.p.rapidapi.com}
+    #apikey: ${YOUTUBE_API_KEY:7eef42a686msh551ed82879c57b3p1cc63ajsn96c0db47d461}
 
 logging:
   level:
