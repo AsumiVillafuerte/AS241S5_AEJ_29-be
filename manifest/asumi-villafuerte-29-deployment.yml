@@ -1,4 +1,5 @@
 # kubectl apply -f asumi-villafuerte-29-deployment.yml
+# kubectl delete -f asumi-villafuerte-29-deployment.yml
 apiVersion: apps/v1
 kind: Deployment
 metadata:

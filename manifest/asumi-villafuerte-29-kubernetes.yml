@@ -58,6 +58,9 @@
 # crear un túnel de puerto la máquina local (host) y el clúster de Kubernetes
   #kubectl port-forward service/asumi-villafuerte-29-service 8085:30001 -n asumi-villafuerte-29-namespace
 
+
+
+
 # ver los logs del pod (logs del proyecto)
   #kubectl get pods -n asumi-villafuerte-29-namespace 
   #kubectl logs nombre-pod -n asumi-villafuerte-29-namespace -- nombre pod-asumi-villafuerte-29-deployment-5595dd958c-b579c
