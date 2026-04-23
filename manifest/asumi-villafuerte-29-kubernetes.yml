@@ -74,3 +74,4 @@
 # PASO 4: minikube service asumi-villafuerte-29-service -n asumi-villafuerte-29-namespace
 # PASO 5: kubectl get all -n asumi-villafuerte-29-namespace --> Opcional
 # PASO 6: kubectl port-forward service/asumi-villafuerte-29-service 8085:30001 -n asumi-villafuerte-29-namespace
+# https://studious-orbit-r4rq4rwxrqwv3wpjj-8085.app.github.dev/api/translate/history
