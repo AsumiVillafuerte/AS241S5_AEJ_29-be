@@ -1,6 +1,6 @@
 server:
   port: ${PORT:8085}
-  url: ${SERVER_URL:https://jubilant-waddle-7vr6vrwxrg9w3xv74-8085.app.github.dev/} #http://localhost:8085
+  url: ${SERVER_URL:https://api-rapi-29-be-v1.onrender.com} #http://localhost:8085
 
 spring:
   application:
