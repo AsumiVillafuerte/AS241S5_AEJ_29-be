@@ -71,6 +71,7 @@
 
 
 
+
 # PASO 1: minikube start
 # PASO 2: cd manifest
 # PASO 3: kubectl apply -f asumi-villafuerte-29-namespace.yml -f asumi-villafuerte-29-secret.yml -f asumi-villafuerte-29-service.yml -f asumi-villafuerte-29-deployment.yml

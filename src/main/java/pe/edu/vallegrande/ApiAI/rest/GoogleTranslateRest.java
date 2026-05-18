@@ -52,3 +52,6 @@ public class GoogleTranslateRest {
         return service.getAllTranslations();
     }
 }
+
+
+
