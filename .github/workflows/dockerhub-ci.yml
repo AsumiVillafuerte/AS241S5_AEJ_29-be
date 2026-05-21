@@ -3,10 +3,10 @@ name: Docker Hub
 on:
   push:
     branches:
-      - develop # puedes añadir más ramas
+      - develop
   pull_request:
     branches:
-      - develop # puedes añadir más ramas
+      - develop
   schedule:
     # Ejecutar todos los días a las 8:00 AM hora Perú (UTC-5) → 1:00 PM UTC
     - cron: '0 13 * * *'
@@ -34,10 +34,7 @@ jobs:
         with:
           context: .
           dockerfile: Dockerfile   # Dockerfile en la raíz del proyecto
-          #file: ./dockerfile-juan/Dockerfile        # Dockerfile en la carpeta dockerfile-juan
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME_ASUMI }}/as241s5_aej_29-be:latest
             ${{ secrets.DOCKERHUB_USERNAME_ASUMI }}/as241s5_aej_29-be:${{ github.sha }}
-
-# Comentario para ejecutar el Pipeline
