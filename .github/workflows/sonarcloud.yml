@@ -34,7 +34,7 @@ jobs:
 
       # 4. Compilar el proyecto con Maven (necesario para sonar.java.binaries)
       - name: Build with Maven
-        run: ./mvnw clean compile -DskipTests
+        run: ./mvnw clean test-compile -DskipTests
 
       # 4. SonarCloud Scan
       - name: SonarCloud Scan
