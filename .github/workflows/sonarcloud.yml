@@ -13,17 +13,17 @@ on:
 jobs:
   sonarcloud:
     name: SonarCloud Scan
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
 
-steps:
+    steps:
 
-  # 1. Checkout del código
-  - name: Checkout Repository
-    uses: actions/checkout@v4
+      # 1. Checkout del código
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-  # 2. SonarCloud Scan
-  - name: SonarCloud Scan
-    uses: SonarSource/sonarcloud-github-action@master
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_BE }}
+      # 2. SonarCloud Scan
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_BE }}
