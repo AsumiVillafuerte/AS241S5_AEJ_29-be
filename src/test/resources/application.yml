@@ -1,0 +1,22 @@
+server:
+  port: 8085
+  url: http://localhost:8085
+
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/testdb?sslmode=disable
+    username: test
+    password: test
+  sql:
+    init:
+      mode: never
+
+rapidapi:
+  google-translate:
+    url: https://google-translate113.p.rapidapi.com
+    host: google-translate113.p.rapidapi.com
+    apikey: test-key
+  youtube-mp3:
+    url: https://youtube-mp310.p.rapidapi.com
+    host: youtube-mp310.p.rapidapi.com
+    apikey: test-key
